@@ -6,18 +6,26 @@ export default class GeneralPrev extends Component {
       <div className="general-prev">
         <h4>Description</h4>
         <hr />
-        <p>Very passionate and all that good stuff, straight up lies</p>
+        <p>{this.props.description}</p>
         <h4>Experience</h4>
         <hr />
-        <p>16/04/2002 - 16/04/2003</p>
-        <p>Class cleaner</p>
-        <p>Javel, Tunis</p>
+        <p>
+          {this.props.fromPr} - {this.props.toPr}
+        </p>
+        <p>{this.props.position}</p>
+        <p>
+          {this.props.company}, {this.props.cityPr}
+        </p>
         <h4>Education</h4>
         <hr />
-        <p>12/09/2021 - 12/09/2022</p>
-        <p>isi, Ariana</p>
-        <p>Degree: Bachelor</p>
-        <p>Subject: Computer Science</p>
+        <p>
+          {this.props.fromEd} - {this.props.toEd}
+        </p>
+        <p>
+          {this.props.university}, {this.props.cityEd}
+        </p>
+        <p>Degree: {this.props.degree}</p>
+        <p>Subject: {this.props.subject}</p>
       </div>
     );
   }

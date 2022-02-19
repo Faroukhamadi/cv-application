@@ -1,25 +1,6 @@
 import React, { Component } from 'react';
 
 export default class EducationalExperience extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      university: '',
-      city: '',
-      degree: '',
-      subject: '',
-      from: '',
-      to: '',
-    };
-  }
-
-  handleInputChange(event) {
-    const name = event.target.name;
-    this.setState({
-      [name]: event.target.value,
-    });
-  }
-
   render() {
     return (
       <div className="educational-exp">
@@ -28,37 +9,37 @@ export default class EducationalExperience extends Component {
           name="university"
           type="text"
           placeholder="University Name"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <input
-          name="city"
+          name="cityEd"
           type="text"
           placeholder="City"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <input
           name="degree"
           type="text"
           placeholder="Degree"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <input
           name="subject"
           type="text"
           placeholder="Subject"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <input
-          name="from"
+          name="fromEd"
           type="text"
           placeholder="From"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <input
-          name="to"
+          name="toEd"
           type="text"
           placeholder="To"
-          onChange={this.handleInputChange}
+          onChange={this.props.handleInputChange}
         />
         <button>Delete</button>
         <button>Add</button>

@@ -8,9 +8,9 @@ export default class Preview extends Component {
   render() {
     return (
       <div className="preview">
-        <HeaderPrev />
-        <GeneralPrev />
-        <PersonalPrev />
+        <HeaderPrev {...this.props} />
+        <GeneralPrev {...this.props} />
+        <PersonalPrev {...this.props} />
       </div>
     );
   }

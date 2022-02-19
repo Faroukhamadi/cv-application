@@ -5,12 +5,24 @@ import GeneralInformation from './GeneralInformation';
 import PracticalExperience from './PracticalExperience';
 
 export default class Info extends Component {
+  resetHandler = (e) => {
+    e.preventDefault();
+    e.target.reset();
+  };
   render() {
     return (
       <div className="info">
-        <GeneralInformation />
-        <EducationalExperience />
-        <PracticalExperience />
+        <form onSubmit={this.resetHandler}>
+          <GeneralInformation
+            handleInputChange={this.props.handleInputChange}
+          />
+          <EducationalExperience
+            handleInputChange={this.props.handleInputChange}
+          />
+          <PracticalExperience
+            handleInputChange={this.props.handleInputChange}
+          />
+        </form>
       </div>
     );
   }

@@ -9,11 +9,11 @@ export default class PersonalPrev extends Component {
         <h3>Personal Details</h3>
         <hr />
         <p>Address</p>
-        <p>Rue chaambi Fahou 1</p>
+        <p>{this.props.address}</p>
         <p>Phone Number</p>
-        <p>50 431 296</p>
+        <p>{this.props.phoneNumber}</p>
         <p>Email</p>
-        <p>faroukhamadi1@outlook.com</p>
+        <p>{this.props.email}</p>
       </div>
     );
   }
