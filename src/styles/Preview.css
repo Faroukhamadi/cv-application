@@ -7,7 +7,7 @@
   box-shadow: -2px 2px 10px 0px rgba(66, 66, 66, 0.8);
   display: grid;
   grid-template-columns: 100mm;
-  grid-template-rows: 50mm;
+  grid-template-rows: 70mm;
 }
 
 .header-prev > h3 {
