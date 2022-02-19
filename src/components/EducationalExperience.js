@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-
 export default class EducationalExperience extends Component {
   render() {
     return (
-      <div>
+      <div className="educational-exp">
         <p>Educational Experience</p>
         <input type="text" placeholder="University Name" />
         <input type="text" placeholder="City" />

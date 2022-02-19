@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class GeneralInformation extends Component {
   render() {
     return (
-      <div>
+      <div className="general-info">
         <p>General Information</p>
         <input type="text" placeholder="First Name" />
         <input type="text" placeholder="Last Name" />

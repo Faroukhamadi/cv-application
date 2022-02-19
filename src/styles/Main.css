@@ -3,6 +3,6 @@
   display: flex;
   justify-content: center;
   gap: 5%;
-  height: 120%;
+  height: fit-content;
   padding: 3rem;
 }

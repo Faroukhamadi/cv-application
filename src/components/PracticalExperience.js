@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class PracticalExperience extends Component {
   render() {
     return (
-      <div>
+      <div className="practical-exp">
         <p>Practical Experience</p>
         <input type="text" placeholder="Position" />
         <input type="text" placeholder="Company" />
@@ -12,7 +12,7 @@ export default class PracticalExperience extends Component {
         <input type="text" placeholder="To" />
         <button>Delete</button>
         <button>Add</button>
-        <button>Reset</button>
+        <button className="reset-btn">Reset</button>
       </div>
     );
   }
