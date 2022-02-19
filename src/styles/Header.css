@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+.header > h1 {
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 250%;
+  margin-left: 10%;
+  color: rgb(214, 210, 210);
+  cursor: pointer;
+}
+
+.header > h1:hover {
+  color: rgb(221, 221, 221);
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 12%;
+  background-color: rgb(43, 43, 43);
+  box-shadow: 1px 2px 15px 8px rgba(0.1, 0.1, 0.1, 0.8);
+  /* Solves shadow not showing */
+  position: relative;
+  z-index: 10;
+}
