@@ -23,6 +23,8 @@ export default class Main extends Component {
     cityPr: '',
     fromPr: '',
     toPr: '',
+    showEducationalExperience: true,
+    showPracticalExperience: true,
   };
 
   handleInputChange = (event) => {
@@ -57,6 +59,28 @@ export default class Main extends Component {
     });
   };
 
+  renderHandler = (e) => {
+    if (e.target.className === 'delete-btnPr') {
+      this.setState({
+        showPracticalExperience: false,
+      });
+    } else if (e.target.className === 'delete-btnEd') {
+      this.setState({
+        showEducationalExperience: false,
+      });
+    } else if (e.target.className === 'add-btnPr') {
+      this.setState({
+        showPracticalExperience: true,
+      });
+    } else if (e.target.className === 'add-btnEd') {
+      this.setState({
+        showEducationalExperience: true,
+      });
+    }
+    console.log('Practical' + this.state.showPracticalExperience);
+    console.log('Educational' + this.state.showEducationalExperience);
+  };
+
   render() {
     return (
       <div className="main">
@@ -64,6 +88,9 @@ export default class Main extends Component {
           {...this.state}
           handleInputChange={this.handleInputChange}
           resetHandler={this.resetHandler}
+          renderHandler={this.renderHandler}
+          showEducationalExperience={this.state.showEducationalExperience}
+          showPracticalExperience={this.state.showPracticalExperience}
         />
         <Preview {...this.state} />
       </div>

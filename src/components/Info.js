@@ -14,9 +14,13 @@ export default class Info extends Component {
           />
           <EducationalExperience
             handleInputChange={this.props.handleInputChange}
+            renderHandler={this.props.renderHandler}
+            showEducationalExperience={this.props.showEducationalExperience}
           />
           <PracticalExperience
             handleInputChange={this.props.handleInputChange}
+            renderHandler={this.props.renderHandler}
+            showPracticalExperience={this.props.showPracticalExperience}
           />
         </form>
       </div>
