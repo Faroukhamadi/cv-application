@@ -5,14 +5,10 @@ import GeneralInformation from './GeneralInformation';
 import PracticalExperience from './PracticalExperience';
 
 export default class Info extends Component {
-  resetHandler = (e) => {
-    e.preventDefault();
-    e.target.reset();
-  };
   render() {
     return (
       <div className="info">
-        <form onSubmit={this.resetHandler}>
+        <form onSubmit={this.props.resetHandler}>
           <GeneralInformation
             handleInputChange={this.props.handleInputChange}
           />
