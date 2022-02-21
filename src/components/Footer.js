@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
 import '../styles/Footer.css';
 import githubLogo from '../images/githubIcon.png';
+import React from 'react';
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <div className="footer">
-        Copyright © 2022 Faroukhamadi
-        <a
-          href="https://github.com/Faroukhamadi"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={githubLogo} alt="github" />
-        </a>
-      </div>
-    );
-  }
-}
+const Footer = (props) => {
+  return (
+    <div className="footer">
+      Copyright © 2022 Faroukhamadi
+      <a
+        href="https://github.com/Faroukhamadi"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={githubLogo} alt="github" />
+      </a>
+    </div>
+  );
+};
+export default Footer;

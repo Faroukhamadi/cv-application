@@ -1,56 +1,55 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class PracticalExperience extends Component {
-  render() {
-    return (
-      <div className="practical-exp">
-        <p>Practical Experience</p>
-        {this.props.showPracticalExperience && (
-          <>
-            <input
-              // value={this.props.position}
-              name="position"
-              type="text"
-              onChange={this.props.handleInputChange}
-              placeholder="Position"
-            />
-            <input
-              // value={this.props.company}
-              name="company"
-              type="text"
-              onChange={this.props.handleInputChange}
-              placeholder="Company"
-            />
-            <input
-              name="cityPr"
-              type="text"
-              onChange={this.props.handleInputChange}
-              placeholder="City"
-            />
-            <input
-              name="fromPr"
-              type="text"
-              onChange={this.props.handleInputChange}
-              placeholder="From"
-            />
-            <input
-              name="toPr"
-              type="text"
-              onChange={this.props.handleInputChange}
-              placeholder="To"
-            />
-          </>
-        )}
-        <button className="delete-btnPr" onClick={this.props.renderHandler}>
-          Delete
-        </button>
-        <button className="add-btnPr" onClick={this.props.renderHandler}>
-          Add
-        </button>
-        <button type="submit" className="reset-btn">
-          Reset
-        </button>
-      </div>
-    );
-  }
-}
+const practicalExperience = (props) => {
+  return (
+    <div className="practical-exp">
+      <p>Practical Experience</p>
+      {props.showPracticalExperience && (
+        <>
+          <input
+            // value={props.position}
+            name="position"
+            type="text"
+            onChange={props.handleInputChange}
+            placeholder="Position"
+          />
+          <input
+            // value={props.company}
+            name="company"
+            type="text"
+            onChange={props.handleInputChange}
+            placeholder="Company"
+          />
+          <input
+            name="cityPr"
+            type="text"
+            onChange={props.handleInputChange}
+            placeholder="City"
+          />
+          <input
+            name="fromPr"
+            type="text"
+            onChange={props.handleInputChange}
+            placeholder="From"
+          />
+          <input
+            name="toPr"
+            type="text"
+            onChange={props.handleInputChange}
+            placeholder="To"
+          />
+        </>
+      )}
+      <button className="delete-btnPr" onClick={props.renderHandler}>
+        Delete
+      </button>
+      <button className="add-btnPr" onClick={props.renderHandler}>
+        Add
+      </button>
+      <button type="submit" className="reset-btn">
+        Reset
+      </button>
+    </div>
+  );
+};
+export default practicalExperience;

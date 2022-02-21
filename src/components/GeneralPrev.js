@@ -1,32 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class GeneralPrev extends Component {
-  render() {
-    return (
-      <div className="general-prev">
-        <h4>Description</h4>
-        <hr />
-        <p>{this.props.description}</p>
-        <h4>Experience</h4>
-        <hr />
-        <p>
-          {this.props.fromPr} - {this.props.toPr}
-        </p>
-        <p>{this.props.position}</p>
-        <p>
-          {this.props.company}, {this.props.cityPr}
-        </p>
-        <h4>Education</h4>
-        <hr />
-        <p>
-          {this.props.fromEd} - {this.props.toEd}
-        </p>
-        <p>
-          {this.props.university}, {this.props.cityEd}
-        </p>
-        <p>Degree: {this.props.degree}</p>
-        <p>Subject: {this.props.subject}</p>
-      </div>
-    );
-  }
-}
+const GeneralPrev = (props) => {
+  return (
+    <div className="general-prev">
+      <h4>Description</h4>
+      <hr />
+      <p>{props.description}</p>
+      <h4>Experience</h4>
+      <hr />
+      <p>
+        {props.fromPr} - {props.toPr}
+      </p>
+      <p>{props.position}</p>
+      <p>
+        {props.company}, {props.cityPr}
+      </p>
+      <h4>Education</h4>
+      <hr />
+      <p>
+        {props.fromEd} - {props.toEd}
+      </p>
+      <p>
+        {props.university}, {props.cityEd}
+      </p>
+      <p>Degree: {props.degree}</p>
+      <p>Subject: {props.subject}</p>
+    </div>
+  );
+};
+
+export default GeneralPrev;

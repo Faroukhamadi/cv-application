@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../styles/Main.css';
 import Info from './Info';
 import Preview from './Preview';
 
-export default class Main extends Component {
-  state = {
+const Main = () => {
+  const [allValues, setAllValues] = useState({
     firstName: '',
     lastName: '',
     title: '',
@@ -25,19 +25,17 @@ export default class Main extends Component {
     toPr: '',
     showEducationalExperience: true,
     showPracticalExperience: true,
+  });
+
+  const handleInputChange = (event) => {
+    setAllValues({ ...allValues, [event.target.name]: event.target.value });
   };
 
-  handleInputChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-    console.log(this.state);
-  };
-
-  resetHandler = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    this.setState({
+  const resetHandler = (event) => {
+    event.preventDefault();
+    event.target.reset();
+    setAllValues({
+      ...allValues,
       firstName: '',
       lastName: '',
       title: '',
@@ -59,41 +57,37 @@ export default class Main extends Component {
     });
   };
 
-  renderHandler = (e) => {
-    if (e.target.className === 'delete-btnPr') {
-      this.setState({
-        showPracticalExperience: false,
-      });
-    } else if (e.target.className === 'delete-btnEd') {
-      this.setState({
-        showEducationalExperience: false,
-      });
-    } else if (e.target.className === 'add-btnPr') {
-      this.setState({
-        showPracticalExperience: true,
-      });
-    } else if (e.target.className === 'add-btnEd') {
-      this.setState({
-        showEducationalExperience: true,
-      });
+  const renderHandler = (event) => {
+    switch (event.target.className) {
+      case 'delete-btnPr':
+        setAllValues({ ...allValues, showPracticalExperience: false });
+        break;
+      case 'delete-btnEd':
+        setAllValues({ ...allValues, showEducationalExperience: false });
+        break;
+      case 'add-btnPr':
+        setAllValues({ ...allValues, showPracticalExperience: true });
+        break;
+      case 'add-btnEd':
+        setAllValues({ ...allValues, showEducationalExperience: true });
+        break;
+      default:
+        break;
     }
-    console.log('Practical' + this.state.showPracticalExperience);
-    console.log('Educational' + this.state.showEducationalExperience);
   };
 
-  render() {
-    return (
-      <div className="main">
-        <Info
-          {...this.state}
-          handleInputChange={this.handleInputChange}
-          resetHandler={this.resetHandler}
-          renderHandler={this.renderHandler}
-          showEducationalExperience={this.state.showEducationalExperience}
-          showPracticalExperience={this.state.showPracticalExperience}
-        />
-        <Preview {...this.state} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="main">
+      <Info
+        {...allValues}
+        handleInputChange={handleInputChange}
+        resetHandler={resetHandler}
+        renderHandler={renderHandler}
+        showEducationalExperience={allValues.showEducationalExperience}
+        showPracticalExperience={allValues.showPracticalExperience}
+      />
+      <Preview {...allValues} />
+    </div>
+  );
+};
+export default Main;
